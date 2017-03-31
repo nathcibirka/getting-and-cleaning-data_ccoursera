@@ -6,9 +6,9 @@
 ## 1.1 Reads the data from the file:
 
 features <- read.table('./UCI HAR Dataset/features.txt')
-activityLabels <- read.table('./UCI HAR Dataset/activity_labels.txt')
+activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt')
 
-x_train <- read.table('./UCI HAR Dataset/train/x_train.txt') 
+x_train <- read.table('./UCI HAR Dataset/train/X_train.txt') 
 y_train <- read.table('./UCI HAR Dataset/train/y_train.txt') 
 subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 
@@ -46,7 +46,7 @@ col_names <- colnames(all_data)
 ### 2 Extract mean and standard deviation (also part of the required item 4 about labeling the data set)
 
 ## 2.1 Define ID, mean and std 
-mean_and_std <- (grepl("activity" , colNames) | grepl("subject" , colNames) | grepl("mean.." , colNames) | grepl("std.." , colNames))
+mean_and_std <- (grepl("activity" , col_names) | grepl("subject" , col_names) | grepl("mean.." , col_ames) | grepl("std.." , col_names))
       
 ## 2.3 Subseting:
 mean_std <- all_data[ , mean_and_std == TRUE]
